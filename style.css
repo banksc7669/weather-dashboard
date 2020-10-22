@@ -1,7 +1,36 @@
-#page_header{
+#header_page{
     text-align: center;
     background-color:green;
     font-family: 'Open Sans Condensed', sans-serif;
     color: pink
+
+}
+
+#searchbtn{
+    background-color: green;
+    color: pink;
+    font-family: 'Open Sans Condensed', sans-serif;
+    border-radius: 2px; 
+}
+
+.card-body{
+    background-color: green;
+    color: pink;
+}
+
+.left_div{
+    height: 100%; 
+}
+
+.listbtn{
+    background-color: green;
+    color: pink;
+    font-family: 'Open Sans Condensed', sans-serif;
+    border-radius: 2px; 
+    width: 60%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 20%;
+    margin-right: 20%;
 
 }
