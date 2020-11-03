@@ -4,6 +4,7 @@ var url = "";
 var APIkey = "";
 var currenturl = "";
 var queryurl = "";
+// console.log("please work..")
 
 var citiesDiv = document.getElementById("searched_cities");
 
@@ -34,7 +35,7 @@ function renderButtons() {
         return;
     }
     var specialCities = [...new Set(cities)];
-    for (var i = 0; i < specialCities.length; i++) {
+    for (var i=0; i < specialCities.length; i++) {
         var cityName = specialCities[i];
 
         var buttonElement = document.createElement("button");
@@ -48,8 +49,10 @@ function renderButtons() {
 //click function
 function listClicker() {
     $(".listbtn").on("click", function(event){
+        console.log("please work..")
         event.preventDefault();
         city = $(this).text().trim();
+        APIcalls();
     })
 }
 
@@ -62,15 +65,16 @@ $(".searchbtn").on("click", function(event){
 
     if (cities.length > 5){
         cities.shift()
-
+    }
+        APIcalls();
         saveCities();
         renderButtons();
         
-}
 })
+}
 
 //Now the tricky part. API calls for URLS.
-function calls() {
+function APIcalls() {
 url = "https://api.openweathermap.org/data/2.5/forecast?q=";
 currenturl = "https://api.openweathermap.org/data/2.5/weather?q=";
 APIkey = "c208340a374216a5b035c2687e5646c5";
@@ -84,7 +88,9 @@ $.ajax({
     url: queryurl,
     method: "GET",
     
-}).then(function(response){
+}).then(function(response) {
     var forecast = 0;
-    
-}
+
+    for (var i=0; i< response.list.length; i++) {
+
+    }
