@@ -44,3 +44,47 @@ function renderButtons() {
         listClicker();
     }
 }
+
+//click function
+function listClicker() {
+    $(".listbtn").on("click", function(event){
+        event.preventDefault();
+        city = $(this).text().trim();
+    })
+}
+
+//click function
+function searchClicker() {
+$(".searchbtn").on("click", function(event){
+    event.preventDefault();
+    city = $(this).text().trim();
+    cities.push(city);
+
+    if (cities.length > 5){
+        cities.shift()
+
+        saveCities();
+        renderButtons();
+        
+}
+})
+
+//Now the tricky part. API calls for URLS.
+function calls() {
+url = "https://api.openweathermap.org/data/2.5/forecast?q=";
+currenturl = "https://api.openweathermap.org/data/2.5/weather?q=";
+APIkey = "c208340a374216a5b035c2687e5646c5";
+
+queryurl = url + city + APIkey
+current_weather_url = currenturl + city + APIkey;
+
+$("city_name").text("current weather in" + city);
+
+$.ajax({
+    url: queryurl,
+    method: "GET",
+    
+}).then(function(response){
+    var forecast = 0;
+    
+}
