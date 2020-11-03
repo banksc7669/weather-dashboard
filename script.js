@@ -2,12 +2,14 @@
 var city="";
 var url="";
 var APIkey="";
+var currenturl="";
 var queryurl="";
 
 var citiesDiv = document.getElementById("searched_cities");
 
-var cities = [];
-search();
+//Empty array
+var cities = []; 
+init();
 listClicker();
 searchClicker();
 
@@ -24,4 +26,11 @@ function search() {
 //set local storage
 function saveCities() {
     localStorage.setItem("cities", JSON.stringify(cities));
+}
+
+function renderButtons() { 
+    citiesDiv.innerHTML = "";
+    if (cities == null){
+        return;
+    }
 }
